@@ -1,0 +1,26 @@
+.custom-input {
+    border-radius: 20px; /* bords arrondis */
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    box-shadow: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-input:focus {
+    border-color: #007bff; /* couleur personnalisée à la sélection */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,123,255,0.4);
+}
+.description-input {
+    border-radius: 5px;              /* coins moins arrondis ou différent */
+    border: 2px solid #36393F;       /* couleur verte par exemple */
+    padding: 14px 20px;              /* padding différent si souhaité */
+    background-color: #f9fff9;       /* couleur de fond légèrement différente */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Cache la scrollbar */
+    resize: none; /* Empêche le redimensionnement manuel */
+    white-space: pre-wrap; /* Préserve les espaces et permet le retour automatique à la ligne */
+    width: 100%; /* Assure que le textarea occupe tout l'espace horizontal disponible */
+    min-height: 40px; /* Hauteur minimale au départ */
+    box-sizing: border-box; /* Évite les débordements éventuels liés au padding */
+}

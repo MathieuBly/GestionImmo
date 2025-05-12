@@ -1,0 +1,91 @@
+/* Style global */
+html
+{
+    background-color: #F2F3F5;
+}
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Boîte centrale */
+.box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre principal */
+.title {
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Liens */
+a {
+    color: #36393F;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #36393F;
+}
+
+/* Tableau stylisé */
+.table {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.table th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.table td {
+    background-color: #ffffff;
+}
+
+/* Images du tableau */
+.table img {
+    border-radius: 8px;
+}
+
+/* Barre de recherche */
+.search {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Boutons d'action */
+.btn-warning {
+
+    color: #3c4455;
+    margin-top: 20px; /* Ajuste la marge supérieure */
+}
+.btn-warning:hover {
+    background-color: #ffffff;
+}
+
+.btn-success {
+
+    color: #36393F;
+}
+.btn-success:hover {
+    background-color: #219150;
+}
+
+.custom-margin-btn {
+    margin-top: 20px; /* ajuste la valeur selon tes besoins */
+}
+

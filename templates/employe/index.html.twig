@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Employés
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('theme/assets/css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+	<!-- Header personnalisé -->
+	<div class="navbar">
+		<div class="logo">
+			<a href="{{ path('app_home') }}">
+				<img src="{{ asset('theme/assets/image/logo.png') }}" alt="MonImmo" style="height: 40px;">
+			</a>
+		</div>
+		<div class="nav">
+			<a class="link" href="{{ path('app_property_index') }}">
+				<i class="bi bi-house-fill me-1"></i>
+				Mes biens
+			</a>
+			<a class="link" href="{{ path('app_logout') }}">
+				<i class="bi bi-box-arrow-right me-1"></i>
+				Déconnexion
+			</a>
+		</div>
+	</div>
+
+	<!-- Contenu principal -->
+	<div class="container" style="margin-top: 100px;">
+		<div class="row">
+			<div class="col-12 text-center mb-4">
+				<h2>Liste des Employés</h2>
+			</div>
+
+			<div class="col-12 text-end mb-3">
+				<button>
+					<a href="{{ path('app_employe_new') }}" class="btn btn-success">
+						<i class="bi bi-person-plus-fill"></i>
+						Ajouter un employé
+					</a>
+				</button>
+			</div>
+
+			<div class="col-12">
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="alert alert-{{ label == 'error' ? 'danger' : label }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+
+				{% if employees is not empty %}
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped">
+							<thead class="table-dark">
+								<tr>
+									{# <th>#</th> #}
+									<th>Email</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for employe in employees %}
+									<tr>
+										{# <td>{{ employe.id }}</td> #}
+										<td>{{ employe.email }}</td>
+										<td>
+											<form method="post" action="{{ path('app_employe_delete', { id: employe.id }) }}" onsubmit="return confirm('Confirmer la suppression ?');">
+												<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ employe.id) }}">
+												<button class="btn btn-sm btn-danger">
+													<i class="bi bi-trash3-fill"></i>
+													Supprimer
+												</button>
+											</form>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				{% else %}
+					<p class="text-center text-muted">Aucun employé trouvé.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

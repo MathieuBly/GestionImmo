@@ -1,0 +1,46 @@
+.home-container {
+    height: 100vh;
+    background: linear-gradient(135deg, #4b7bec, #20bf6b);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-content {
+    max-width: 600px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.home-content .highlight {
+    color: #ffd32a;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.home-content .btn-primary {
+    background-color: #fff;
+    color: #4b7bec;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.home-content .btn-primary:hover {
+    background-color: #dfe6e9;
+    color: #1e272e;
+}

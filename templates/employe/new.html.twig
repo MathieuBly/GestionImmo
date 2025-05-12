@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un Employé{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Ajouter un Employé</h2>
+
+    <!-- Bouton de retour -->
+    <div class="mb-4">
+        <a href="{{ path('app_employe_index') }}" class="btn btn-secondary">
+            ← Retour à la liste des employés
+        </a>
+    </div>
+
+    {{ form_start(form) }}
+        <div class="mb-3">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email, { attr: { class: 'form-control' } }) }}
+        </div>
+        <div class="mb-3">
+            {{ form_label(form.password) }}
+            {{ form_widget(form.password, { attr: { class: 'form-control' } }) }}
+        </div>
+        <button class="btn btn-primary w-100">Créer</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

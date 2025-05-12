@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('theme/assets/css/style.css') }}">
+{% endblock %}
+
+{% block title %}Inscription entreprise{% endblock %}
+
+{% block body %}
+{% include './header.html.twig' %}
+    <div class="container mt-5">
+        <h1>Inscription entreprise</h1>
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.password) }}
+            {{ form_row(registrationForm.companyName) }}
+            <button class="btn btn-success mt-3">Créer mon compte</button>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

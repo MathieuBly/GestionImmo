@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau bien
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('theme/assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('theme/assets/css/modif.css') }}">
+{% endblock %}
+
+{% block body %}
+	{% include './header.html.twig' %}
+	<div class="container">
+		<div class="box mx-auto p-4">
+			<h1 class="title text-center mb-4">Create new Property</h1>
+
+			{{ include('property/_form.html.twig') }}
+
+			<a href="{{ path('app_property_index') }}" class="btn btn-secondary custom-margin-btn">
+				Retour à la liste
+			</a>
+		</div>
+	</div>
+	{# Inclusion du Footer #}
+	{% include './footer.html.twig' %}
+	<script src="{{ asset('theme/assets/js/autoresize.js') }}"></script>
+{% endblock %}

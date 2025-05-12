@@ -1,0 +1,74 @@
+/* ======================= */
+/*         HEADER          */
+/* ======================= */
+
+/* Navbar (utilisation de Flexbox) */
+.navbar {
+    display: flex;
+    background-color:  #36393F;
+    height: 2cm;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    margin-right: 20px;
+    
+}
+
+.nav a{
+    display: inline;
+}
+
+/* Logo */
+.logo {
+    margin-left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 1.8cm;
+    width: auto;
+}
+
+/* Conteneur des liens et boutons */
+
+/* Liens */
+.link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #dfe6e9;
+}
+
+/* Boutons */
+.button {
+    padding: 8px 16px;
+    border: none;
+    transition: background-color 0.3s;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.button-primary {
+    background-color: #20bf6b;
+}
+
+.button-primary:hover {
+    background-color: #3d3383;
+}
