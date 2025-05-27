@@ -41,24 +41,17 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
     # Super admin
-    - { path: ^/admin, roles: ROLE_ADMIN }
-
-    # Admin d'entreprise
-    - { path: ^/entreprise, roles: ROLE_USER_ADMIN }
-
-    # Employés d'entreprise
-    - { path: ^/employe/dashboard, roles: ROLE_USER_EMPLOYE }
-
-    # Employés accédant à /property (si tu veux l'interdire)
-    - { path: ^/property, roles: [ROLE_USER_ADMIN, ROLE_USER_EMPLOYE] }
-
-
-    # Connexion et inscription accessibles à tous
     - { path: ^/login, roles: PUBLIC_ACCESS }
     - { path: ^/registercompany, roles: PUBLIC_ACCESS }
     - { path: ^/home, roles: PUBLIC_ACCESS }
 
-    # Tout utilisateur connecté
+    # 🔐 Accès restreints
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/entreprise, roles: ROLE_USER_ADMIN }
+    - { path: ^/employe/dashboard, roles: ROLE_USER_EMPLOYE }
+    - { path: ^/property, roles: [ROLE_USER_ADMIN, ROLE_USER_EMPLOYE] }
+
+    # ✅ Tout utilisateur connecté
     - { path: ^/, roles: ROLE_USER }
 
 
